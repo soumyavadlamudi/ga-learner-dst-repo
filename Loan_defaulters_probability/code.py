@@ -35,23 +35,25 @@ print(bayes)
 #Calculate the paid.back.loan == No and the store the result in dataframe df1
 #Visualize the bar plot for the feature purpose where paid.back.loan == No
 df.purpose.value_counts().plot(kind = 'bar')
+plt.title("Probability Distribution of Purpose")
+plt.ylabel("Probability")
+plt.xlabel("Number of Purpose")
+plt.show()
 
 df1 = df[df['paid.back.loan'] == 'No']
 df1.purpose.value_counts().plot(kind = 'bar')
-
+plt.title("Probability Distribution of Purpose")
+plt.ylabel("Probability")
+plt.xlabel("Number of Purpose")
+plt.show()
 
 #Let's plot the histogram for visualization of the continuous variable. So that you will get the basic idea about how the distribution of continuous variables looks like.
 inst_median = df['installment'].median()
 inst_mean = df['installment'].mean()
 
 df['installment'].hist(normed = True, bins = 50)
+plt.axvline(x=inst_median,color='r')
+plt.axvline(x=inst_mean,color='g')
+
 df['log.annual.inc'].hist(normed = True, bins = 50)
-
-
-
-
-
-
-
-
-
+plt.show()
